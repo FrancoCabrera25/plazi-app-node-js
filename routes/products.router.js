@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
   const products = await service.find();
   res.json({
     data: products,
-    total: products.length,
+    //total: products.length,
   });
 });
 
