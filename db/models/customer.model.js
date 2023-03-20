@@ -32,6 +32,7 @@ const CustomerSchema = {
     allowNull: false,
     field: 'user_id',
     type: DataTypes.INTEGER,
+    unique: true,
     references: {
       model: 'users',
       key: 'id',
@@ -51,7 +52,7 @@ class Customer extends Model {
       sequelize,
       tableName: CUSTOMER_TABLE,
       modelName: 'Customer',
-      timesstamps: false,
+      timestamps: false,
     };
   }
 }
