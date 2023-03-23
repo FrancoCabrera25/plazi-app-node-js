@@ -1,5 +1,5 @@
 const express = require('express');
-//const routerApi = require('./routes');
+const routerApi = require('./routes');
 const cors = require('cors');
 const {
   logErrors,
@@ -34,7 +34,7 @@ app.get('/nueva-ruta', (req, res) => {
   });
 });
 
-//routerApi(app);
+routerApi(app);
 try {
   app.use(logErrors);
   app.use(ormErrorHandler);
