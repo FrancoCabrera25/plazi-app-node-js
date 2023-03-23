@@ -9,7 +9,7 @@ class OrderService {
     return newOrder;
   }
 
-  async createItem(data) {
+  async addItem(data) {
     const newItem = await models.OrderProduct.create(data);
     return newItem;
   }
