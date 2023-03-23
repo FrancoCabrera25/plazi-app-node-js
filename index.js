@@ -29,7 +29,7 @@ app.get('/nueva-ruta', (req, res) => {
   });
 });
 
-routerApi(app);
+//routerApi(app);
 
 app.use(logErrors);
 app.use(ormErrorHandler);
