@@ -8,6 +8,8 @@ const {
   ormErrorHandler,
 } = require('./middlewares/error.handler');
 
+const { checkApiKey } = require('./middlewares/auth.handler');
+
 const app = express();
 const port = 3000;
 // const whiteList = [];
@@ -28,7 +30,7 @@ app.get('/', (req, res) => {
   res.send(`Hola mi app con node esta corriendo en el ${port}`);
 });
 
-app.get('/nueva-ruta', (req, res) => {
+app.get('/nueva-ruta', checkApiKey, (req, res) => {
   res.json({
     message: 'hola nueva ruta',
   });
